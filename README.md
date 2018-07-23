@@ -26,6 +26,8 @@ The data files is available for download on Zenodo: [Add link here](#). You can 
 
 # Details on collected data
 
+![Setup](https://github.com/AaltoVision/ADVIO/blob/master/setup.png)
+
 ## Ground-truth
 
 * __Ground-truth poses:__ Camera pose (translation and orientation) calculated based on the raw IMU data and a set of known fixation points. The ground-truth track is sampled at 100 Hz.
