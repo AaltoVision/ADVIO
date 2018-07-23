@@ -138,6 +138,10 @@ data
       ...
 ```
 
+# Privacy
+
+This data is collected in public places in Finland, and the collection of the data agrees with the local legislation. We, however, take your privacy seriously. If you find yourself in the data and wish to be removed, please contact us through the contact information provided at the top of this page.
+
 # Licence
 
 TBA
