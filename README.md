@@ -75,7 +75,7 @@ The data files is available for download on Zenodo: [Add link here](#). You can 
 The following table summarizes the features of the 23 data sets:
 
 |Id|Venue|Dataset|In/Out|Stairs|Escalator|Elevator|People|Vehicles|
-|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|:---------:|
 |1  | Mall  | 01  | Indoor  |  | ✔ |  | Moderate  |
 |2  | Mall  | 02  | Indoor  |  |  |  | Moderate  |
 |3  | Mall  | 03  | Indoor  |  |  |  | Moderate  |
