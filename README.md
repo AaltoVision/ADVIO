@@ -1,28 +1,42 @@
-# ADVIO
+# ADVIO: An Authentic Dataset for Visual-Inertial Odometry
+
+[Santiago Cortés](https://research.aalto.fi/portal/santiago.cortesreina.html) · [Arno Solin](http://arno.solin.fi) · [Esa Rahtu](http://esa.rahtu.fi) · [Juho Kannala](https://users.aalto.fi/~kannalj1/)
 
 The lack of realistic and open benchmarking datasets for pedestrian visual-inertial odometry has made it hard to pinpoint differences in published methods. Existing datasets either lack a full six degree-of-freedom ground-truth or are limited to small spaces with optical tracking systems. We take advantage of advances in pure inertial navigation, and develop a set of versatile and challenging real-world computer vision benchmark sets for visual-inertial odometry. For this purpose, we have built a test rig equipped with an iPhone, a Google Pixel Android phone, and a Google Tango device. We provide a wide range of raw sensor data that is accessible on almost any modern-day smartphone together with a high-quality ground-truth track. We also compare resulting visual-inertial tracks from Google Tango, ARCore, and Apple ARKit with two recent methods published in academic forums. The data sets cover both indoor and outdoor cases, with stairs, escalators, elevators, office environments, a shopping mall, and metro station.
 
+## Example video
 
-The attached supplementary video shows the ground-truth track for data set \#16 (captured in one of the two office buildings). The visualized track is the ground-truth track calculated from the entire IMU data sequence. The fix points used for track calculation are visualized by dots. The track on the current floor shows in red. The video has been sped-up.
+This video shows the ground-truth track for data set \#16 (captured in one of the two office buildings). The visualized track is the ground-truth track calculated from the entire IMU data sequence. The fix points used for track calculation are visualized by dots. The track on the current floor shows in red. The video has been sped-up.
 
+## Attribution
+
+If you use this data, please cite the original paper presenting it:
+
+* Santiago Cortés, Arno Solin, Esa Rahtu, and Juho Kannala (2018). *ADVIO: An authentic dataset for visual-inertial odometry.* Accepted for publication in European Conference on Computer Vision (ECCV). Munich, Germany.
+
+
+# Downloading the data
+
+The data files is available for download on Zenodo: [Add link here](#). You can also use `wget` to fetch the data:
+
+```bash
+  wget ...
+```
 
 
 # Details on collected data
 
 ## Ground-truth
 
+* __Ground-truth poses:__ Camera pose (translation and orientation) calculated based on the raw IMU data and a set of known fixation points. The ground-truth track is sampled at 100 Hz.
 
-* Ground-truth poses: Camera pose (translation and orientation) calculated based on the raw IMU data and a set of known fixation points. The ground-truth track is sampled at 100Hz.
-
-* Fix points: A set of ground-truth points marked with a visual editor. The points are based on the three videos stored by the system (primarily the iPhone and the second iPhone that filmed a reference track showing the capturer) and floor plan layouts.
+* __Fix points:__ A set of ground-truth points marked with a visual editor. The points are based on the three videos stored by the system (primarily the iPhone and the second iPhone that filmed a reference track showing the capturer) and floor plan layouts.
 
 ## iPhone
 
-* UNIX time: Time stamps aligning the internal device clock to UNIX time. Time stamp acquired through the network at beginning of each data capture.
+* __Camera frames:__ Camera frames are captured at 60 fps (resolution of 1280 by 720, portrait). The exact frame acquisition times reported by the platform are stored.
 
-* Camera frames: Camera frames are captured at 60 fps (resolution of 1280 by 720, portrait). The exact frame acquisition times reported by the platform are stored.
-
-* Platform location: Data collected through CoreLocation. The update rate depends on the device and its capabilities. Locations are requested with the desired accuracy of kCLLocationAccuracyBest. The timestamps are converted to follow the same clock as the other sensors (time interval since device boot). The stored values are
+* __Platform location:__ Data collected through CoreLocation. The update rate depends on the device and its capabilities. Locations are requested with the desired accuracy of kCLLocationAccuracyBest. The timestamps are converted to follow the same clock as the other sensors (time interval since device boot). The stored values are
 
   * Coordinate.latitude
   * Coordinate.longitude
@@ -31,36 +45,65 @@ The attached supplementary video shows the ground-truth track for data set \#16 
   * VerticalAccuracy
   * Speed
 
+* __Accelerometer:__ Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. CoreMotion reports the accelerations in 'g's (at standstill you expect to have 1g in the vertical direction).
 
-* Accelerometer: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. CoreMotion reports the accelerations in 'g's (at standstill you expect to have 1g in the vertical direction).
+* __Gyroscope:__ Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Note that the readings are in the Apple device coordinate frame (not altered in any way here).
 
-* Gyroscope: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Note that the readings are in the Apple device coordinate frame (not altered in any way here).
+* __Magnetometer:__ Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Values are the three-axis magnetometer readings in uT. All values are uncalibrated.
 
-* Magnetometer: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Values are the three-axis magnetometer readings in uT. All values are uncalibrated.
+* __Barometric altimeter:__ Data collected through CoreMotion/CMAltimeter. Acquired at an uneven sampling rate (roughly 1 Hz). Samples are stored as they arrive from the delegare callback. The actual barometric pressure is in val0 and the inferred relative altutude (calculated by Apple magic) is stored in val1.
 
-* Barometric altimeter: Data collected through CoreMotion/CMAltimeter. Acquired at an uneven sampling rate (roughly 1 Hz). Samples are stored as they arrive from the delegare callback. The actual barometric pressure is in val0 and the inferred relative altutude (calculated by Apple magic) is stored in val1.
-
-* ARKit poses : The Apple ARKit poses (translation and orientation) are captured at 60 Hz. The camera parameters reported by ARKit on the iPhone are stored as well.
+* __ARKit poses:__ The Apple ARKit poses (translation and orientation) are captured at 60 Hz. The camera parameters reported by ARKit on the iPhone are stored as well.
 
 ## Tango
 
-* UNIX time: Time stamps aligning the internal device clock to UNIX time.
+* __Tango poses (raw):__ The Google Tango raw poses (translation and orientation) are captured at 60 Hz.
 
-* Tango poses (raw): The Google Tango raw poses (translation and orientation) are captured at 60 Hz.
+* __Tango poses (area learning):__ The Google Tango area learning poses (translation and orientation) are captured at 60 Hz.
 
-* Tango poses (area learning): The Google Tango area learning poses (translation and orientation) are captured at 60 Hz.
+* __Camera frames:__ Video from the wide-angle (fisheye) camera on the Tango. Captured at 30 fps with  640 by 480 resolution.
 
-* Camera frames: Video from the wide-angle (fisheye) camera on the Tango. Captured at 30 fps with  640 by 480 resolution.
+* __Tango point clouds:__ Tango point cloud data acquired by the Tango device and aligned to the current pose of the device.
 
 ## Pixel
 
-* UNIX time: Time stamps aligning the internal device clock to UNIX time.
+* __ARCore poses:__ The Google ARCore poses (translation and orientation) are captured at 30 Hz.
 
-* ARCore poses: The Google ARCore poses (translation and orientation) are captured at 30 Hz.
 
-# Dataset structure
+# List of data sets
 
-To maximize compatibility, all data is published in open and simple file formats. The comma separated value (CSV) files hold a timestamp in the first column and the respective data in the columns that follow. All time stamps are synchronized between sensor types and devices. Camera frames are stored as H.264/MPEG video and the associated frame time stamps are available in separate CSV files. 
+The following table summarizes the features of the 23 data sets:
+
+|Id|Venue|Dataset|In/Out|Stairs|Escalator|Elevator|People|Vehicles|
+|---------|---------|---------|---------|---------|---------|---------|---------|---------|
+|1  | Mall  | 01  | Indoor  |  | ✔ |  | Moderate  |
+|2  | Mall  | 02  | Indoor  |  |  |  | Moderate  |
+|3  | Mall  | 03  | Indoor  |  |  |  | Moderate  |
+|4  | Mall  | 04  | Indoor  |  | ✔ |  | Moderate  |
+|5  | Mall  | 05  | Indoor  | ✔ |  |  | Moderate  |
+|6  | Mall  | 06  | Indoor  |  |  |  | High  |
+|7  | Mall  | 07  | Indoor  |  |  | ✔ | Low  |
+|8  | Mall  | 08  | Indoor  |  | ✔ |  | Low  |
+|9  | Mall  | 09  | Indoor  |  | ✔ |  | Low  |
+|10  | Mall  | 10  | Indoor  |  |  |  | Low  |
+|11  | Metro  | 01  | Indoor  |  |  |  | High  | ✔
+|12  | Metro  | 02  | Indoor  |  |  |  | High  | ✔
+|13  | Office  | 01  | Indoor  | ✔ |  |  | Low  |
+|14  | Office  | 02  | Indoor  | ✔ |  | ✔ | Low  |
+|15  | Office  | 03  | Indoor  |  |  |  | None  |
+|16  | Office  | 04  | Indoor  | ✔ |  |  | None  |
+|17  | Office  | 05  | Indoor  | ✔ |  |  | None  |
+|18  | Office  | 06  | Indoor  | ✔ |  | ✔ | None  |
+|19  | Office  | 07  | Indoor  | ✔ |  |  | None  |
+|20  | Outdoor | 01  | Outdoor  |  |  |  | Low  | ✔
+|21  | Outdoor | 02  | Outdoor  |  |  |  | Low  | ✔
+|22  | Outdoor (urban)  | 01  | Outdoor  |  |  |  | High  | ✔
+|23  | Outdoor (urban)  | 02  | Outdoor  |  |  |  | High  | ✔
+
+
+# Data structure
+
+To maximize compatibility, all data is published in open and simple file formats. The comma separated value (CSV) files hold a timestamp in the first column and the respective data in the columns that follow. All time stamps are synchronized between sensor types and devices. Camera frames are stored as H.264/MPEG video and the associated frame time stamps are available in separate CSV files.
 
 The folder structure for one data set looks like the following:
 
@@ -95,33 +138,6 @@ data
       ...
 ```
 
+# Licence
 
-
-
-|Id|Venue|Dataset|In/Out|Stairs|Escalator|Elevator|People|Vehicles|
-|---------|---------|---------|---------|---------|---------|---------|---------|---------|
-|1  | Mall  | 01  | Indoor  |  | :heavy_check_mark: |  | Moderate  |
-|2  | Mall  | 02  | Indoor  |  |  |  | Moderate  |
-|3  | Mall  | 03  | Indoor  |  |  |  | Moderate  |
-|4  | Mall  | 04  | Indoor  |  | :heavy_check_mark: |  | Moderate  |
-|5  | Mall  | 05  | Indoor  | :heavy_check_mark: |  |  | Moderate  |
-|6  | Mall  | 06  | Indoor  |  |  |  | High  |
-|7  | Mall  | 07  | Indoor  |  |  | :heavy_check_mark: | Low  |
-|8  | Mall  | 08  | Indoor  |  | :heavy_check_mark: |  | Low  |
-|9  | Mall  | 09  | Indoor  |  | :heavy_check_mark: |  | Low  |
-|10  | Mall  | 10  | Indoor  |  |  |  | Low  |
-|11  | Metro  | 01  | Indoor  |  |  |  | High  |:heavy_check_mark:
-|12  | Metro  | 02  | Indoor  |  |  |  | High  |:heavy_check_mark:
-|13  | Office  | 01  | Indoor  | :heavy_check_mark: |  |  | Low  |
-|14  | Office  | 02  | Indoor  | :heavy_check_mark: |  | :heavy_check_mark: | Low  |
-|15  | Office  | 03  | Indoor  |  |  |  | None  |
-|16  | Office  | 04  | Indoor  | :heavy_check_mark: |  |  | None  |
-|17  | Office  | 05  | Indoor  | :heavy_check_mark: |  |  | None  |
-|18  | Office  | 06  | Indoor  | :heavy_check_mark: |  | :heavy_check_mark: | None  |
-|19  | Office  | 07  | Indoor  | :heavy_check_mark: |  |  | None  |
-|20  | Outdoor | 01  | Outdoor  |  |  |  | Low  |:heavy_check_mark:
-|21  | Outdoor | 02  | Outdoor  |  |  |  | Low  |:heavy_check_mark:
-|22  | Outdoor (urban)  | 01  | Outdoor  |  |  |  | High  |:heavy_check_mark:
-|23  | Outdoor (urban)  | 02  | Outdoor  |  |  |  | High  |:heavy_check_mark:
-
-
+TBA
