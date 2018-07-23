@@ -12,7 +12,7 @@ The attached supplementary video shows the ground-truth track for data set \#16 
 ## Ground-truth
 
 
-* Ground-truth poses: Camera pose (translation and orientation) calculated based on the raw IMU data and a set of known fixation points. The ground-truth track is sampled at 100~Hz.
+* Ground-truth poses: Camera pose (translation and orientation) calculated based on the raw IMU data and a set of known fixation points. The ground-truth track is sampled at 100Hz.
 
 * Fix points: A set of ground-truth points marked with a visual editor. The points are based on the three videos stored by the system (primarily the iPhone and the second iPhone that filmed a reference track showing the capturer) and floor plan layouts.
 
@@ -20,7 +20,7 @@ The attached supplementary video shows the ground-truth track for data set \#16 
 
 * UNIX time: Time stamps aligning the internal device clock to UNIX time. Time stamp acquired through the network at beginning of each data capture.
 
-* Camera frames: Camera frames are captured at 60~fps (1280 $\times$ 720, portrait). The exact frame acquisition times reported by the platform are stored.
+* Camera frames: Camera frames are captured at 60 fps (resolution of 1280 by 720, portrait). The exact frame acquisition times reported by the platform are stored.
 
 * Platform location: Data collected through CoreLocation. The update rate depends on the device and its capabilities. Locations are requested with the desired accuracy of kCLLocationAccuracyBest. The timestamps are converted to follow the same clock as the other sensors (time interval since device boot). The stored values are
 
@@ -32,31 +32,31 @@ The attached supplementary video shows the ground-truth track for data set \#16 
   * Speed
 
 
-* Accelerometer: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. CoreMotion reports the accelerations in 'g's (at standstill you expect to have 1~g in the vertical direction).
+* Accelerometer: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. CoreMotion reports the accelerations in 'g's (at standstill you expect to have 1g in the vertical direction).
 
 * Gyroscope: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Note that the readings are in the Apple device coordinate frame (not altered in any way here).
 
 * Magnetometer: Data collected through CoreMotion/CMMotionManager. Acquired at 100 Hz, which is the maximum rate. Values are the three-axis magnetometer readings in uT. All values are uncalibrated.
 
-* Barometric altimeter: Data collected through CoreMotion/CMAltimeter. Acquired at an uneven sampling rate ($\sim$1~Hz). Samples are stored as they arrive from the delegare callback. The actual barometric pressure is in val0 and the inferred relative altutude (calculated by Apple magic) is stored in val1.
+* Barometric altimeter: Data collected through CoreMotion/CMAltimeter. Acquired at an uneven sampling rate (roughly 1 Hz). Samples are stored as they arrive from the delegare callback. The actual barometric pressure is in val0 and the inferred relative altutude (calculated by Apple magic) is stored in val1.
 
-* ARKit poses : The Apple ARKit poses (translation and orientation) are captured at 60~Hz. The camera parameters reported by ARKit on the iPhone are stored as well.
+* ARKit poses : The Apple ARKit poses (translation and orientation) are captured at 60 Hz. The camera parameters reported by ARKit on the iPhone are stored as well.
 
 ## Tango
 
 * UNIX time: Time stamps aligning the internal device clock to UNIX time.
 
-* Tango poses (raw): The Google Tango raw poses (translation and orientation) are captured at 60~Hz.
+* Tango poses (raw): The Google Tango raw poses (translation and orientation) are captured at 60 Hz.
 
-* Tango poses (area learning): The Google Tango area learning poses (translation and orientation) are captured at 60~Hz.
+* Tango poses (area learning): The Google Tango area learning poses (translation and orientation) are captured at 60 Hz.
 
-* Camera frames: Video from the wide-angle (fisheye) camera on the Tango. Captured at 30~fps / 640$\times$480.
+* Camera frames: Video from the wide-angle (fisheye) camera on the Tango. Captured at 30 fps with  640 by 480 resolution.
 
 ## Pixel
 
 * UNIX time: Time stamps aligning the internal device clock to UNIX time.
 
-* ARCore poses: The Google ARCore poses (translation and orientation) are captured at 30~Hz.
+* ARCore poses: The Google ARCore poses (translation and orientation) are captured at 30 Hz.
 
 # Dataset structure
 
