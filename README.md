@@ -19,12 +19,17 @@ If you use this data, please cite the original paper presenting it:
 
 # Downloading the data
 
-The data files is available for download on Zenodo: [Add link here](#). You can also use `wget` to fetch the data:
+The data files are available for download on Zenodo: [https://zenodo.org/record/1320825](https://zenodo.org/record/1320825) and can be downloaded on a per dataset basis from there. You can also use `wget` with the following bash snippet to fetch all the data:
 
 ```bash
-  wget ...
+# Download all 23 data ZIPs from Zenodo
+for i in $(seq -f "%02g" 1 23);
+do
+  wget -O advio-$i.zip https://zenodo.org/record/1320825/files/advio-$i.zip
+done
 ```
 
+The size of one set ranges from 71 Mb to 255 Mb (packed). Uncompressed total size around 5.1 Gb.
 
 # Details on collected data
 
