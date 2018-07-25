@@ -1,4 +1,4 @@
-![DOI 10.5281/zenodo.1320825](https://zenodo.org/badge/DOI/10.5281/zenodo.1320825.svg)
+![DOI 10.5281/zenodo.1320824](https://zenodo.org/badge/DOI/10.5281/zenodo.1320824.svg)
 
 # ADVIO: An Authentic Dataset for Visual-Inertial Odometry
 
@@ -19,13 +19,13 @@ If you use this data, please cite the original paper presenting it:
 
 # Downloading the data
 
-The data files are available for download on Zenodo: [https://zenodo.org/record/1320825](https://zenodo.org/record/1320825) and can be downloaded on a per dataset basis from there. You can also use `wget` with the following bash snippet to fetch all the data:
+The data files are available for download on Zenodo: [https://zenodo.org/record/1320824](https://zenodo.org/record/1320824) and can be downloaded on a per dataset basis from there. You can also use `wget` with the following bash snippet to fetch all the data:
 
 ```bash
 # Download all 23 data ZIPs from Zenodo
 for i in $(seq -f "%02g" 1 23);
 do
-  wget -O advio-$i.zip https://zenodo.org/record/1320825/files/advio-$i.zip
+  wget -O advio-$i.zip https://zenodo.org/record/1321157/files/advio-$i.zip
 done
 ```
 
