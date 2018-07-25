@@ -118,7 +118,7 @@ The folder structure for one data set looks like the following:
 
 ```
 data
-└───dataset01
+└───advio-01
 │   └───ground-truth
 │   │     poses.csv
 │   │     fixpoints.csv
@@ -143,7 +143,7 @@ data
 │   └───pixel
 │         arcore.csv
 │     
-└───dataset02
+└───advio-02
       ...
 ```
 
