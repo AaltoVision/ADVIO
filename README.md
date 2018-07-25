@@ -36,7 +36,7 @@ The data files is available for download on Zenodo: [Add link here](#). You can 
 
 ## iPhone
 
-* __Camera frames:__ Camera frames are captured at 60 fps (resolution of 1280 by 720, portrait). The exact frame acquisition times reported by the platform are stored.
+* __Camera frames:__ Camera frames are captured at 60 fps (resolution of 1280 by 720, portrait). The exact frame acquisition times reported by the platform are stored. The frames are packed into an H.264/MPEG-4 video file.
 
 * __Platform location:__ Data collected through CoreLocation. The update rate depends on the device and its capabilities. Locations are requested with the desired accuracy of kCLLocationAccuracyBest. The timestamps are converted to follow the same clock as the other sensors (time interval since device boot). The stored values are
 
@@ -63,9 +63,9 @@ The data files is available for download on Zenodo: [Add link here](#). You can 
 
 * __Tango poses (area learning):__ The Google Tango area learning poses (translation and orientation) are captured at 60 Hz.
 
-* __Camera frames:__ Video from the wide-angle (fisheye) camera on the Tango. Captured at 30 fps with  640 by 480 resolution.
+* __Camera frames:__ Video from the wide-angle (fisheye) camera on the Tango. Captured at ~5 fps with  640 by 480 resolution. The frames are packed into an MPEG-4 video file.
 
-* __Tango point clouds:__ Tango point cloud data acquired by the Tango device and aligned to the current pose of the device.
+* __Tango point clouds:__ Tango point cloud data acquired by the Tango device and aligned to the current pose of the device. Sampling rate is not uniform. Timestamps are stored in `point-cloud.csv`. The actual point clouds are stored in the corresponding `point-cloud-$index.csv`.
 
 ## Pixel
 
