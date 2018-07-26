@@ -10,6 +10,8 @@ The lack of realistic and open benchmarking datasets for pedestrian visual-inert
 
 This video shows the ground-truth track for data set \#16 (captured in one of the two office buildings). The visualized track is the ground-truth track calculated from the entire IMU data sequence. The fix points used for track calculation are visualized by dots. The track on the current floor shows in red. The video has been sped-up.
 
+[![ADVIO Dataset 16](https://img.youtube.com/vi/AU_PXxvxBHM/0.jpg)](http://www.youtube.com/watch?v=AU_PXxvxBHM)
+
 ## Attribution
 
 If you use this data, please cite the original paper presenting it:
