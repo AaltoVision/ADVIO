@@ -64,7 +64,7 @@ The size of one set ranges from 71 Mb to 255 Mb (packed). Uncompressed total siz
 
 * __Barometric altimeter:__ Data collected through CoreMotion/CMAltimeter. Acquired at an uneven sampling rate (roughly 1 Hz). Samples are stored as they arrive from the delegare callback. The actual barometric pressure is in val0 and the inferred relative altutude (calculated by Apple magic) is stored in val1.
 
-* __ARKit poses:__ The Apple ARKit poses (translation and orientation) are captured at 60 Hz. The camera parameters reported by ARKit on the iPhone are stored as well.
+* __ARKit poses:__ The Apple ARKit poses (translation and orientation) are captured at 60 Hz.
 
 ## Tango
 
