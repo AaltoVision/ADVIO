@@ -16,7 +16,7 @@ This video shows the ground-truth track for data set \#16 (captured in one of th
 
 If you use this data, please cite the original paper presenting it:
 
-* Santiago Cortés, Arno Solin, Esa Rahtu, and Juho Kannala (2018). *ADVIO: An authentic dataset for visual-inertial odometry.* Accepted for publication in European Conference on Computer Vision (ECCV). Munich, Germany.
+* Santiago Cortés, Arno Solin, Esa Rahtu, and Juho Kannala (2018). *ADVIO: An authentic dataset for visual-inertial odometry.* Accepted for publication in European Conference on Computer Vision (ECCV). Munich, Germany. [[arXiv]](https://arxiv.org/abs/1807.09828)
 
 
 # Downloading the data
