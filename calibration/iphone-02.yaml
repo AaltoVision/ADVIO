@@ -1,0 +1,21 @@
+label: "Iphone - original_calibration"
+id: 412eab8e4058621f7036b5e765dfe812
+cameras:
+- camera:
+    label: cam0
+    id: 54812562fa109c40fe90b29a59dd7798
+    line-delay-nanoseconds: 0
+    image_height: 1280
+    image_width: 720
+    type: pinhole
+    intrinsics:
+      cols: 1
+      rows: 4
+      data: [1077.2, 1079.3,362.145, 636.3873]
+    distortion:
+      type: radial-tangential  
+      parameters:
+        cols: 1
+        rows: 4
+        data: [0.0478, 0.0339, -0.00033,
+    -0.00091]
