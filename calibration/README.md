@@ -22,7 +22,7 @@ The ADVIO data was collected in four batches, and the calibrations were done for
 
 ## iPhone camera to IMU transformation
 
-Calibration performed with the [Kalibr](https://github.com/ethz-asl/kalibr) toolbox. Very stable, assumed the same for all sequences.
+Calibration performed with the [Kalibr](https://github.com/ethz-asl/kalibr) toolbox.
 
 |  |  |  |  |
 | ------------- | ------------- | ------------- | ------------- |
