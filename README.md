@@ -27,7 +27,7 @@ The data files are available for download on Zenodo: [https://zenodo.org/record/
 # Download all 23 data ZIPs from Zenodo
 for i in $(seq -f "%02g" 1 23);
 do
-  wget -O advio-$i.zip https://zenodo.org/record/1321157/files/advio-$i.zip
+  wget -O advio-$i.zip https://zenodo.org/record/1476931/files/advio-$i.zip
 done
 ```
 
