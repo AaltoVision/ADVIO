@@ -21,7 +21,7 @@ The video frames are packed into a video file. The script view_frame.py shows on
 # Usage
 python view_frame $path$ $dataset number$ $time$ $camera scale$
 # Example to produce the image below
-python view_frame ../../data 1 aligned 50 0.5
+python view_frame ../../data 16 42.0 1.0
 ```
 
 ![pose](https://github.com/AaltoVision/ADVIO/blob/master/scripts/visualization/example-frame.png)
