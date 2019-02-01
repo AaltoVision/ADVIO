@@ -11,14 +11,14 @@ cameras:
     intrinsics:
       cols: 1
       rows: 4
-      data: [1076.9, 1078.5,360.96, 639.31]
+      data: [1081.1, 1082.1,359.59, 640.79]
     distortion:
       type: radial-tangential  
       parameters:
         cols: 1
         rows: 4
-        data: [0.0510, -0.0354, -0.0054,
-    0.0473]
+        data: [0.0556, -0.0454, 0.0009,
+    -0.0018]			
     T_cam_imu:
         cols: 4
         rows: 4
