@@ -10,8 +10,9 @@ The ADVIO data was collected in four batches, and the calibrations were done for
 | 13-17|1082.4| 1084.4|364.68| 643.31|0.0366| 0.0803| 0.0007|-0.0002|
 | 18-19|1076.9| 1078.5|360.96| 639.31|0.0510| -0.0354| -0.0054|0.0473|
 | 20-23|1081.1|1082.1|359.59|640.79|0.0556|-0.0454|0.0009|-0.0018|
-  
-## iPhone IMU (approximate) additive biases
+
+## iPhone IMU calibration
+# iPhone IMU (approximate) additive biases
 
 | Sequences  |acc<sub>x |acc<sub>y |acc<sub>x |gyr<sub>x |gyr<sub>y |gyr<sub>z |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -19,6 +20,17 @@ The ADVIO data was collected in four batches, and the calibrations were done for
 | 13-17|0.0415| -0.0617|0.1008| -0.0065|0.0055| -0.0064|
 | 18-19|0.0393| -0.0635|0.1024| -0.0069|0.0062| -0.0067|
 | 20-23|0.0405| -0.0620|0.1012| -0.0066|0.0065| -0.0063|
+
+
+### iPhone accelerometer
+Accelerometer noise density: 4.8e-3       #Noise density (continuous-time)
+
+Accelerometer random walk:   2.1e-4       #Bias random walk
+
+### iPhone Gyroscope
+Gyroscope noise density:     2.4e-3       #Noise density (continuous-time)
+
+Gyroscope random walk:       5.1e-5       #Bias random walk
 
 ## iPhone camera to IMU transformation
 
