@@ -4,12 +4,12 @@ The ADVIO data was collected in four batches, and the calibrations were done for
 
 # iPhone camera
 
-| Sequences  |f<sub>x |f<sub>y |c<sub>x |c<sub>y |r<sub>1 |r<sub>2 |k<sub>1 |k<sub>2 |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| 1-12 |1077.2| 1079.3|362.14| 636.39|0.0478| 0.0339| -0.0003|-0.0009|
-| 13-17|1082.4| 1084.4|364.68| 643.31|0.0366| 0.0803| 0.0007|-0.0002|
-| 18-19|1076.9| 1078.5|360.96| 639.31|0.0510| -0.0354| -0.0054|0.0473|
-| 20-23|1081.1|1082.1|359.59|640.79|0.0556|-0.0454|0.0009|-0.0018|
+| Sequences  |f<sub>x |f<sub>y |c<sub>x |c<sub>y |r<sub>1 |r<sub>2 |k<sub>1 |k<sub>2 | file name|
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ---------|
+|1-12 |1077.2| 1079.3|362.14| 636.39|0.0478| 0.0339| -0.0003|-0.0009|iphone` - `2.yaml|
+|13-17|1082.4| 1084.4|364.68| 643.31|0.0366| 0.0803| 0.0007|-0.0002|iphone` - `3.yaml|
+|18-19|1076.9| 1078.5|360.96| 639.31|0.0510| -0.0354| -0.0054|0.0473|iphone` - `1.yaml|
+|20-23|1081.1|1082.1|359.59|640.79|0.0556|-0.0454|0.0009|-0.0018| iphone` - `4.yaml|
 
 ## iPhone IMU calibration
 # iPhone IMU (approximate) additive biases
@@ -28,7 +28,7 @@ Accelerometer noise density: 4.8e-3       #Noise density (continuous-time)
 Accelerometer random walk:   2.1e-4       #Bias random walk
 
 ### iPhone Gyroscope
-Gyroscope noise density:     2.4e-3       #Noise density (continuous-time)
+ Gyroscope noise density:     2.4e-3       #Noise density (continuous-time)
 
 Gyroscope random walk:       5.1e-5       #Bias random walk
 
