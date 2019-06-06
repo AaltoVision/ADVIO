@@ -25,7 +25,7 @@ python sync-data.py <data folder>
 ### Create ROSBAG for one sequence
 bag is created for the sequence in data/advio-xx/iphone/iphone.bag
 ```bash
-python sync-data.py <data folder> <sequence number>
+python advio_to_rosbag.py <data folder> <sequence number>
 ```
 ## Example
 
@@ -33,5 +33,5 @@ Build the rosbag for sequence 15 in (...)/ADVIO/data
 
 ```bash
 python sync-data.py (...)/ADVIO/data
-python sync-data.py (...)/ADVIO/data 15
+python advio_to_rosbag.py (...)/ADVIO/data 15
 ```
